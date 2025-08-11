@@ -1,0 +1,16 @@
+when:
+  - event: push
+    branch: main
+
+steps:
+  - name: build
+    image: paulhuggett/ubuntu-build
+    commands:
+      - mkdir build
+      - cmake -S . -B build -G Ninja
+      - ninja
+  - name: a-test-step
+    image: paulhuggett/ubuntu-build
+    commands:
+      - echo "Testing ..."
+      - ./hello
