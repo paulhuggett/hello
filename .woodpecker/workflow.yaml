@@ -8,7 +8,7 @@ steps:
     commands:
       - mkdir build
       - cmake -S . -B build -G Ninja
-      - ninja
+      - ninja -C build
   - name: a-test-step
     image: paulhuggett/ubuntu-build
     commands:
