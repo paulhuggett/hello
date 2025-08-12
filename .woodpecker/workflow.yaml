@@ -13,4 +13,4 @@ steps:
     image: paulhuggett/ubuntu-build
     commands:
       - echo "Testing ..."
-      - ./hello
+      - ./build/hello
