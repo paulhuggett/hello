@@ -12,5 +12,5 @@ steps:
   - name: a-test-step
     image: paulhuggett/ubuntu-build
     commands:
-      - echo "Testing ..."
+      - echo "Testing One, Two..."
       - ./build/hello
