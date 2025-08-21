@@ -7,11 +7,14 @@ import sys
 import ktransfer
 
 def main():
+    print()
+    print('->', os.environ)
     exit_code = 0
     token = os.getenv('PLUGIN_TOKEN')
     drive_id = int(os.getenv('PLUGIN_DRIVE_ID'))
     name = os.getenv('PLUGIN_NAME')
     method = os.getenv('PLUGIN_METHOD').lower()
+
     if method == 'put':
         ktransfer.upload(token, drive_id, pathlib.Path(name))
     elif method == 'get':
