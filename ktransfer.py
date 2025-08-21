@@ -67,8 +67,7 @@ def download(token:str, drive_id:int, name:str) -> None:
 
 def upload(token:str, drive_id:int, src:pathlib.Path) -> None:
     files = list_files(token, drive_id, ROOT)
-    response = put_file(token, drive_id, files['Private'], src)
-    print(response)
+    return put_file(token, drive_id, files['Private'], src)
 
 
 def main() -> int:
@@ -84,7 +83,7 @@ def main() -> int:
 
     args = parser.parse_args()
     if args.method == 'put':
-        upload(args.token, args.drive_id, pathlib.Path(args.name))
+        print(upload(args.token, args.drive_id, pathlib.Path(args.name)))
     else:
         download(args.token, args.drive_id, args.name)
     return 0
