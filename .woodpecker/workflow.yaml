@@ -14,3 +14,11 @@ steps:
     commands:
       - echo "Testing One, Two..."
       - ./build/hello
+  - name: upload
+    image: paulhuggett/ktransfer
+    settings:
+      token:
+        from_secret: API_TOKEN
+      drive_id: 641975
+      method: put
+      name: ./build/hello
